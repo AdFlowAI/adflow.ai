@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export const Navbar = () => {
   return (
-    <nav className="fixed top-0 right-0 left-0 w-screen bg-white/50 py-4 backdrop-blur backdrop-filter">
+    <nav className="fixed top-0 right-0 left-0 z-50! w-screen bg-white/50 py-4 backdrop-blur backdrop-filter">
       <div className="container mx-auto flex max-w-6xl items-center justify-between">
         <p className="font-medium">Adflow.ai</p>
         <div className="flex items-center gap-x-4"></div>

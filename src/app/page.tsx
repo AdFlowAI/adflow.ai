@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { COMPETITOR_ANALYSIS, FEATURES, FREQUENTLY_ASKED_QUESTIONS, HOW_IT_WORKS } from "@/constants";
+import { BENEFITS, FEATURES, FREQUENTLY_ASKED_QUESTIONS, HOW_IT_WORKS } from "@/constants";
 import { Footer, Navbar, TagHeader } from "@/components/shared";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib";
 
 const Page = () => {
   return (
@@ -19,7 +20,7 @@ const Page = () => {
                   delivers real-time insights so your team can scale ROAS without scaling headcount.
                 </p>
               </div>
-              <Button size="lg">Start your free trial</Button>
+              <Button size="xl">Start your free trial</Button>
             </div>
           </div>
         </section>
@@ -27,7 +28,7 @@ const Page = () => {
           <div className="space-y-4">
             <TagHeader title="how it works" />
             <p className="text-primary-500 text-3xl sm:text-6xl">
-              See how Adflow.ai streamlines your ad workflow in three simple steps
+              See how Adflow.ai streamlines your ad workflow in four simple steps
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-10">
@@ -47,16 +48,15 @@ const Page = () => {
           <div className="flex w-full flex-col items-center gap-y-10 sm:gap-y-20">
             <div className="space-y-4">
               <TagHeader title="benefits" />
-              <p className="text-primary-500 text-3xl sm:text-6xl"></p>
+              <p className="text-primary-500 text-3xl sm:text-6xl">
+                Maximize efficiency and ROI with intelligent automation
+              </p>
             </div>
-            <div className="w-full">
-              <div className="grid w-full grid-cols-4"></div>
-              {COMPETITOR_ANALYSIS.map((item, index) => (
-                <div className="grid w-full grid-cols-4" key={index}>
-                  <div className="">{item.feature}</div>
-                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
-                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
-                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
+            <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-20">
+              {BENEFITS.map((benefit, index) => (
+                <div className="space-y-4" key={index}>
+                  <p className="text-primary-500 font-medium sm:text-lg">{benefit.title}</p>
+                  <p className="text-xs text-gray-600 sm:text-sm">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -97,15 +97,24 @@ const Page = () => {
             <Accordion className="sm:col-span-2" type="single">
               {FREQUENTLY_ASKED_QUESTIONS.map((faq, index) => (
                 <AccordionItem value={`item-${index}`} key={index}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionTrigger className="sm:text-base">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 sm:text-base">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
         </section>
-        <section className="w-full bg-black">
-          <div className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20"></div>
+        <section className="bg-image-1 w-full bg-black/50 bg-cover bg-no-repeat bg-blend-overlay">
+          <div className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+            <div className="flex flex-col items-center gap-y-10 sm:gap-y-20">
+              <p className="text-center text-3xl font-medium text-white sm:text-6xl">
+                Ready to scale your ad performance without scaling your team?
+              </p>
+              <Button asChild size="xl">
+                <Link href="/signup">Get started for free</Link>
+              </Button>
+            </div>
+          </div>
         </section>
       </div>
       <Footer />

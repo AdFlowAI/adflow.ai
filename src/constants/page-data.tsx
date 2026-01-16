@@ -47,70 +47,23 @@ export const FEATURES = [
 export const BENEFITS = [
   {
     title: "Save Time & Resources",
-    description: "Automate repetitive tasks and reduce manual workload with AI-powered campaign management.",
+    description:
+      "Automate repetitive tasks and reduce manual workload with AI-powered campaign management. Eliminate hours of daily manual bid adjustments, keyword research, and performance reporting. Our intelligent automation handles everything from budget allocation to creative testing, freeing your team to focus on strategic initiatives while cutting operational costs by up to 70%.",
   },
   {
     title: "Increase ROAS",
-    description: "Optimize ad spend across channels with real-time bidding and performance insights.",
+    description:
+      "Optimize ad spend across channels with real-time bidding and performance insights. Our AI continuously analyzes thousands of data points to identify high-value audiences, optimal bidding strategies, and winning creative combinations. Expect to see 25-40% improvement in return on ad spend within the first month as our system eliminates waste and scales what works.",
   },
   {
     title: "Scale Effortlessly",
-    description: "Grow your campaigns without increasing headcount or complexity.",
+    description:
+      "Grow your campaigns without increasing headcount or complexity. Launch campaigns across multiple platforms simultaneously, test hundreds of creative variations automatically, and expand into new markets with confidence. Our platform handles the complexity of scaling while maintaining performance, allowing you to grow from $10K to $1M in monthly ad spend without adding a single team member.",
   },
   {
     title: "Data-Driven Decisions",
-    description: "Access comprehensive analytics and market intelligence to guide strategy.",
-  },
-];
-
-export const COMPETITOR_ANALYSIS = [
-  {
-    feature: "AI-Powered Optimization",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Cross-Channel Management",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Real-Time Bidding",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Creative Rotation",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Competitor Insights",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Pricing Model",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "Onboarding Time",
-    a: false,
-    b: false,
-    c: true,
-  },
-  {
-    feature: "AI Assistant",
-    a: false,
-    b: false,
-    c: true,
+    description:
+      "Access comprehensive analytics and market intelligence to guide strategy. Make informed decisions with real-time dashboards, competitor benchmarking, predictive analytics, and AI-generated recommendations. Understand not just what happened, but why it happened and what's likely to happen next, turning raw data into actionable insights that drive continuous improvement.",
   },
 ];
 

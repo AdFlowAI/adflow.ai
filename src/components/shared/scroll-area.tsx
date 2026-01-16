@@ -9,7 +9,7 @@ interface Props {
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 
-export const ScrollArea = ({ children, className, orientation = "vertical", hideScrollbar = false, ref }: Props) => {
+export const ScrollArea = ({ children, className, orientation = "vertical", hideScrollbar = true, ref }: Props) => {
   return (
     <div
       className={cn(

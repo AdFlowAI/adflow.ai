@@ -36,6 +36,8 @@
   --color-primary-700: #141e1e;
   --color-primary-800: #0f1717;
   --color-primary-900: #0a0f0f;
+
+  --background-image-image-1: url("/assets/images/background-1.jpg");
 }
 
 .dark {
