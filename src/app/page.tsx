@@ -1,29 +1,111 @@
-import { Footer, Navbar } from "@/components/shared";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { COMPETITOR_ANALYSIS, FEATURES, FREQUENTLY_ASKED_QUESTIONS, HOW_IT_WORKS } from "@/constants";
+import { Footer, Navbar, TagHeader } from "@/components/shared";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib";
 
 const Page = () => {
   return (
     <>
       <Navbar />
       <div className="w-screen">
-        <section className="container mx-auto h-screen py-20 sm:py-40">
-          <div className="grid h-full w-full place-items-center text-center">
-            <div>
-              <p className="text-4xl font-semibold sm:text-8xl">Adly.ai</p>
-              <p className="text-gray-600">This is where the tagline would sit beautifully</p>
+        <section className="container mx-auto h-screen max-w-6xl py-20 sm:py-40">
+          <div className="grid h-full w-full place-items-center">
+            <div className="flex flex-col items-center gap-y-10 sm:gap-y-20">
+              <div className="flex items-end gap-10">
+                <p className="text-primary-500 text-4xl font-semibold sm:text-9xl">Adflow.ai</p>
+                <p className="max-w-md text-base text-gray-600 sm:text-lg">
+                  The AI-powered ads manager that automates campaign creation, optimizes spend across every channel, and
+                  delivers real-time insights so your team can scale ROAS without scaling headcount.
+                </p>
+              </div>
+              <Button size="lg">Start your free trial</Button>
             </div>
           </div>
         </section>
-        <section className="container mx-auto space-y-4 py-10 sm:py-20">
-          <p className="">FEATURES</p>
+        <section className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+          <div className="space-y-4">
+            <TagHeader title="how it works" />
+            <p className="text-primary-500 text-3xl sm:text-6xl">
+              See how Adflow.ai streamlines your ad workflow in three simple steps
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-10">
+            {HOW_IT_WORKS.map((item, index) => (
+              <div className="bg-primary-50/10 relative shrink-0 space-y-4 p-4" key={index}>
+                <item.icon className="text-primary-500/10 absolute top-0 right-0 size-20 sm:size-40" />
+                <div className="flex w-full items-center justify-between">
+                  <p className="font-medium sm:text-lg">{item.title}</p>
+                  <item.icon className="text-primary-500 size-4 sm:size-6" />
+                </div>
+                <p className="text-xs sm:text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </section>
-        <section className="container mx-auto space-y-4 py-10 sm:py-20">
-          <p className="">FEATURES</p>
+        <section className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+          <div className="flex w-full flex-col items-center gap-y-10 sm:gap-y-20">
+            <div className="space-y-4">
+              <TagHeader title="benefits" />
+              <p className="text-primary-500 text-3xl sm:text-6xl"></p>
+            </div>
+            <div className="w-full">
+              <div className="grid w-full grid-cols-4"></div>
+              {COMPETITOR_ANALYSIS.map((item, index) => (
+                <div className="grid w-full grid-cols-4" key={index}>
+                  <div className="">{item.feature}</div>
+                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
+                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
+                  <div className={cn(item.a ? "text-green-500" : "text-red-500")}>{}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
-        <section className="container mx-auto space-y-4 py-10 sm:py-20">
-          <p className="">FEATURES</p>
+        <section className="bg-primary-500 w-full text-white">
+          <div className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+            <div className="space-y-4">
+              <TagHeader title="features" inverted />
+              <p className="text-3xl text-gray-200 sm:text-6xl">Discover the tools that power smarter campaigns</p>
+            </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-10">
+              {FEATURES.map((feature, index) => (
+                <div className="" key={index}>
+                  <div className="flex items-center gap-x-2">
+                    <feature.icon className="size-4" />
+                    <p className="">{feature.title}</p>
+                  </div>
+                  <p className="text-xs text-gray-400 sm:text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
-        <section className="container mx-auto space-y-4 py-10 sm:py-20">
-          <p className="">FEATURES</p>
+        <section className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+          <div className="space-y-4">
+            <TagHeader title="reviews" />
+            <p className="text-primary-500 text-3xl sm:text-6xl">Trusted by thousands of marketers worldwide</p>
+          </div>
+          <div className=""></div>
+        </section>
+        <section className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20">
+          <div className="grid w-full grid-cols-1 sm:grid-cols-3">
+            <div className="space-y-4">
+              <TagHeader title="frequently asked questions" />
+              <p className="text-primary-500 text-3xl sm:text-6xl">Everything you need to know</p>
+            </div>
+            <Accordion className="sm:col-span-2" type="single">
+              {FREQUENTLY_ASKED_QUESTIONS.map((faq, index) => (
+                <AccordionItem value={`item-${index}`} key={index}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+        <section className="w-full bg-black">
+          <div className="container mx-auto max-w-6xl space-y-6 py-10 sm:py-20"></div>
         </section>
       </div>
       <Footer />

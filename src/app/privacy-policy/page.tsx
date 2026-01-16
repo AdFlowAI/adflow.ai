@@ -5,10 +5,10 @@ const Page = () => {
     <>
       <Navbar />
       <div className="w-screen">
-        <section className="container mx-auto py-20 sm:py-40">
+        <section className="container mx-auto max-w-6xl py-20 sm:py-40">
           <p className="text-6xl font-semibold">Privacy Policy</p>
         </section>
-        <section className="container mx-auto py-10 sm:py-20"></section>
+        <section className="container mx-auto max-w-6xl py-10 sm:py-20"></section>
       </div>
       <Footer />
     </>

@@ -10,3 +10,4 @@ export * from "./otp-input";
 export * from "./scroll-area";
 export * from "./sidebar";
 export * from "./tab-panel";
+export * from "./tag-header";

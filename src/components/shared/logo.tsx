@@ -13,7 +13,7 @@ export const Logo = ({ className, isLink = false }: Props) => {
     return (
       <Link href="/">
         <div className={cn("relative aspect-3/1 w-20", className)}>
-          <Image alt="adly.ai" className="" fill sizes="100%" src="" />
+          <Image alt="adflow.ai" className="" fill sizes="100%" src="" />
         </div>
       </Link>
     );
@@ -21,7 +21,7 @@ export const Logo = ({ className, isLink = false }: Props) => {
 
   return (
     <div className={cn("relative aspect-3/1 w-20", className)}>
-      <Image alt="adly.ai" className="" fill sizes="100%" src="" />
+      <Image alt="adflow.ai" className="" fill sizes="100%" src="" />
     </div>
   );
 };

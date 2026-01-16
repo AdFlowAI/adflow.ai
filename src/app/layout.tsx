@@ -10,7 +10,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Adly.ai",
+  title: "Adflow.ai - Ads management simplified",
   description: "",
 };
 

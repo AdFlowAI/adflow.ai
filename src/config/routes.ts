@@ -2,6 +2,7 @@ import {
   RiApps2Line,
   RiMegaphoneLine,
   RiPieChartLine,
+  RiRocket2Line,
   RiSettings3Line,
   RiUserCommunityLine,
   RiWalletLine,
@@ -30,7 +31,7 @@ export const DASHBOARD_ROUTES: RouteProps[] = [
   },
   {
     href: "/dashboard/campaigns",
-    icon: RiMegaphoneLine,
+    icon: RiRocket2Line,
     label: "Campaigns",
   },
   {
@@ -56,30 +57,8 @@ export const DASHBOARD_ROUTES: RouteProps[] = [
 ];
 
 export const FOOTER_ROUTES = [
-  {
-    name: "company",
-    links: [
-      { label: "Features", href: "/features" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Integrations", href: "/" },
-      { label: "Help Center", href: "/help-center" },
-    ],
-  },
-  {
-    name: "resources",
-    links: [
-      { label: "Documentation", href: "/" },
-      { label: "Support", href: "/" },
-      { label: "Community", href: "/" },
-    ],
-  },
-  {
-    name: "legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
-      { label: "Disclaimers", href: "/disclaimers" },
-    ],
-  },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Help Center", href: "/help-center" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
 ];

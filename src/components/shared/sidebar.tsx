@@ -19,7 +19,7 @@ export const Sidebar = ({ type }: Props) => {
   return (
     <aside className="h-full w-[285px] border-r">
       <div className="flex h-14 w-full items-center border-b px-4">
-        <p className="text-lg font-semibold">Adly.ai</p>
+        <p className="text-lg font-semibold">Adflow.ai</p>
       </div>
       <div className="h-[calc(100%-56px)] w-full p-4">
         <div className="space-y-4">
