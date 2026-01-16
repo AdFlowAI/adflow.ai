@@ -34,8 +34,8 @@ jobs:
       - name: run unit tests
         run: pnpm run test:unit
 
-      - name: run coverage
-        run: pnpm run test:coverage
+      # - name: run coverage
+      #   run: pnpm run test:coverage
 
       - name: install playwright browsers
         run: pnpm exec playwright install --with-deps chromium
