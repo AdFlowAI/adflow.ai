@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useRef } from "react";
 import Link from "next/link";
 
+import { staggerContainerVariants, staggerItemVariants, useReducedMotion, cardHoverVariants } from "@/lib/motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BENEFITS, FEATURES, FREQUENTLY_ASKED_QUESTIONS, HOW_IT_WORKS } from "@/constants";
-import { staggerContainerVariants, staggerItemVariants, useReducedMotion, cardHoverVariants } from "@/lib/motion";
 import { Footer, Navbar, TagHeader } from "@/components/shared";
 import { MotionSection } from "@/components/motion";
 import { Button } from "@/components/ui/button";

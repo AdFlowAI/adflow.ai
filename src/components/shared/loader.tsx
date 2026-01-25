@@ -145,7 +145,7 @@ export const PageLoader = ({ className, variant = "spinner", message }: PageLoad
 
   return (
     <motion.div
-      className={cn("fixed inset-0 z-[9999] grid place-items-center bg-white", className)}
+      className={cn("fixed inset-0 z-9999 grid place-items-center bg-white", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
