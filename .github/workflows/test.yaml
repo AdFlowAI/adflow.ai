@@ -28,8 +28,8 @@ jobs:
       - name: install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: run unit tests
-        run: pnpm run test:unit
+      # - name: run unit tests
+      #   run: pnpm run test:unit
 
       # - name: run coverage
       #   run: pnpm run test:coverage

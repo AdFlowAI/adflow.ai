@@ -12,8 +12,17 @@ jest.mock("@/components/ui/button", () => ({
   Button: () => <button data-testid="button">Button</button>,
 }));
 
+jest.mock("next/image", () => ({
+  // eslint-disable-next-line @next/next/no-img-element
+  Image: () => <img alt="" data-testid="image" />,
+}));
+
 jest.mock("next/link", () => ({
-  Link: () => <a data-testid="lin">Button</a>,
+  Link: () => <a data-testid="link">Button</a>,
+}));
+
+jest.mock("@/components/motion", () => ({
+  MotionSection: ({ children }: { children: React.ReactNode }) => <div data-testid="motion-section">{children}</div>,
 }));
 
 jest.mock("@/components/ui/accordion", () => ({
