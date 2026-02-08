@@ -1,11 +1,11 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { RiArrowUpDownLine } from "@remixicon/react";
 import { formatDistanceToNow } from "date-fns";
-import Image from "next/image";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Checkbox } from "@/components/ui/checkbox";
 import type { AdminUserProps } from "@/types";
-import { cn, formatCurrency } from "@/lib";
+import { cn, formatCurrency, getInitials } from "@/lib";
 import { USER_STATUS } from "@/config";
 
 export const columns: ColumnDef<AdminUserProps>[] = [
@@ -33,16 +33,13 @@ export const columns: ColumnDef<AdminUserProps>[] = [
     header: "User",
     cell: ({ row }) => (
       <div className="flex items-center gap-3">
-        <Image
-          src={row.original.profile.avatar_url}
-          alt={row.original.full_name}
-          height={32}
-          width={32}
-          className="size-8 rounded-full object-cover"
-        />
+        <Avatar className="size-8">
+          <AvatarImage src={row.original.profile.avatar_url} />
+          <AvatarFallback>{getInitials(row.original.full_name)}</AvatarFallback>
+        </Avatar>
         <div>
           <p className="font-medium">{row.original.full_name}</p>
-          <p className="text-xs text-gray-500">{row.original.email}</p>
+          <p className="text-xs text-gray-500 lowercase">{row.original.email}</p>
         </div>
       </div>
     ),

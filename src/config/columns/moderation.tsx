@@ -53,7 +53,7 @@ export const columns: ColumnDef<ModerationItemProps>[] = [
     header: "Content",
     cell: ({ row }) => (
       <div>
-        <p className="font-medium">{row.original.content_title}</p>
+        <p className="font-medium capitalize">{row.original.content_title}</p>
         <p className="max-w-60 truncate text-xs text-gray-500">{row.original.content_preview}</p>
       </div>
     ),
