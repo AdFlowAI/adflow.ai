@@ -6,7 +6,7 @@ import { useState, useEffect, useMemo } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
 
-import { DatePicker, type DateRange } from "@/components/shared";
+import { DatePicker, type DateRange, Loader } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { CampaignProps } from "@/types";
@@ -76,7 +76,7 @@ const Page = () => {
   if (isLoading) {
     return (
       <div className="flex h-full items-center justify-center">
-        <div className="text-gray-500">Loading campaign...</div>
+        <Loader size="lg" />
       </div>
     );
   }

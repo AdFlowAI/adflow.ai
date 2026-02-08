@@ -91,7 +91,10 @@ const Page = () => {
             description: found.description || "",
             status: found.status,
             targeting: {
-              age_range: found.targeting.age_range || { min: 18, max: 65 },
+              age_range:
+                found.targeting.age_range?.min && found.targeting.age_range?.max
+                  ? { min: found.targeting.age_range.min, max: found.targeting.age_range.max }
+                  : { min: 18, max: 65 },
               genders: (found.targeting.genders?.filter((g) => g !== "unknown") as ("male" | "female")[]) || [],
               locations: found.targeting.locations || [],
               interests: found.targeting.interests || [],
@@ -101,8 +104,6 @@ const Page = () => {
         }
         setIsLoading(false);
       }, 500);
-    } else {
-      setIsLoading(false);
     }
   }, [audienceId]);
 

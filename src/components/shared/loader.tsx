@@ -68,7 +68,7 @@ const Dots = ({ size = "md", color = "primary" }: Pick<LoaderProps, "size" | "co
   if (shouldReduceMotion) {
     return (
       <div className="flex items-center gap-1">
-        {[0, 1, 2].map((i) => (
+        {[...Array(5)].map((i) => (
           <div key={i} className={cn("rounded-full", dot, colorMap[color].split(" ")[1])} />
         ))}
       </div>
