@@ -62,8 +62,6 @@ const Page = () => {
         }
         setIsLoading(false);
       }, 500);
-    } else {
-      setIsLoading(false);
     }
   }, [budgetId]);
 

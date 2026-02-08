@@ -352,7 +352,7 @@ const Page = () => {
                 <div>
                   <p className="text-primary-900 font-medium">Ready to Launch</p>
                   <p className="text-primary-700 text-sm">
-                    Your campaign is configured and ready to go. Click "Create Campaign" to launch.
+                    Your campaign is configured and ready to go. Click &lsaquo;Create Campaign&rsaquo; to launch.
                   </p>
                 </div>
               </div>

@@ -38,7 +38,6 @@ const Page = () => {
 
   useEffect(() => {
     if (adId) {
-      // Simulate loading ad data
       setTimeout(() => {
         const found = MOCK_ADS.find((a) => a.id === adId);
         if (found) {
@@ -51,8 +50,6 @@ const Page = () => {
         }
         setIsLoading(false);
       }, 500);
-    } else {
-      setIsLoading(false);
     }
   }, [adId]);
 

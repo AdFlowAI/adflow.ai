@@ -1,9 +1,10 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { RiArrowUpDownLine } from "@remixicon/react";
 import { formatDistanceToNow } from "date-fns";
+import Image from "next/image";
 
-import type { AdminUserProps } from "@/types";
 import { Checkbox } from "@/components/ui/checkbox";
+import type { AdminUserProps } from "@/types";
 import { cn, formatCurrency } from "@/lib";
 import { USER_STATUS } from "@/config";
 
@@ -32,9 +33,11 @@ export const columns: ColumnDef<AdminUserProps>[] = [
     header: "User",
     cell: ({ row }) => (
       <div className="flex items-center gap-3">
-        <img
+        <Image
           src={row.original.profile.avatar_url}
           alt={row.original.full_name}
+          height={32}
+          width={32}
           className="size-8 rounded-full object-cover"
         />
         <div>

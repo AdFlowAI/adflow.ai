@@ -7,7 +7,6 @@ import { toast } from "sonner";
 import Link from "next/link";
 
 import { DatePicker, type DateRange } from "@/components/shared";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { CampaignProps } from "@/types";
@@ -56,8 +55,6 @@ const Page = () => {
         }
         setIsLoading(false);
       }, 500);
-    } else {
-      setIsLoading(false);
     }
   }, [campaignId]);
 

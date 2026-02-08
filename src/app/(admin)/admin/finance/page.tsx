@@ -1,5 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { toast } from "sonner";
+import Image from "next/image";
 import {
   RiArrowUpLine,
   RiArrowDownLine,
@@ -9,8 +12,6 @@ import {
   RiWalletLine,
   RiDownloadLine,
 } from "@remixicon/react";
-import { motion } from "framer-motion";
-import { toast } from "sonner";
 
 import { staggerContainerVariants, staggerItemVariants, useReducedMotion } from "@/lib/motion";
 import { MOCK_PLATFORM_METRICS, MOCK_ADMIN_USERS, MOCK_FINANCES } from "@/__mock__";
@@ -134,7 +135,15 @@ const Page = () => {
                       {index + 1}
                     </span>
                     <div className="flex items-center gap-2">
-                      <img src={user.profile.avatar_url} alt={user.full_name} className="size-8 rounded-full" />
+                      <div className="relative size-8">
+                        <Image
+                          alt={user.full_name}
+                          className="size-8 rounded-full"
+                          fill
+                          sizes="100%"
+                          src={user.profile.avatar_url}
+                        />
+                      </div>
                       <div>
                         <p className="text-sm font-medium">{user.full_name}</p>
                         <p className="text-xs text-gray-500">{user.profile.company_name}</p>
