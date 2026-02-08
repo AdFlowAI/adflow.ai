@@ -1,9 +1,10 @@
 import { faker } from "@faker-js/faker";
+import * as Yup from "yup";
 
 import type { SignInDto, SigninResponse } from "@/types";
 
 export const mockApiAuth = async (payload: SignInDto): Promise<SigninResponse> => {
-  if (!payload.email || !payload.password) {
+  if ((!payload.email && !Yup.string().email().isValidSync(payload.email)) || !payload.password) {
     throw {
       message: "Invalid email or password",
       status: 401,
@@ -16,8 +17,8 @@ export const mockApiAuth = async (payload: SignInDto): Promise<SigninResponse> =
     user: {
       id: faker.string.uuid(),
       full_name: "John Doe",
-      email: "johndoe@example.com",
-      role: "USER",
+      email: payload.email,
+      role: "ADMIN",
       permissions: [],
       auth_provider: "email",
       date_joined: new Date().toISOString(),

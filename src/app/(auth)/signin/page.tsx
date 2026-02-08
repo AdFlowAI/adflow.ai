@@ -41,7 +41,8 @@ const Page = () => {
       mockApiAuth(values)
         .then((response) => {
           setIsLoading(false);
-          signin(response, { redirectUrl: "/dashboard", remember: true });
+          const redirectUrl = response.user.role === "ADMIN" ? "/admin" : "/dashboard";
+          signin(response, { redirectUrl, remember: true });
         })
         .catch((error) => {
           setIsLoading(false);
@@ -73,7 +74,9 @@ const Page = () => {
         variants={containerVariants}
       >
         <motion.div className="space-y-4 text-center" variants={itemVariants}>
-          <p className="text-xl font-semibold">Adflow.ai</p>
+          <Link href="/">
+            <p className="text-xl font-medium">Adflow.ai</p>
+          </Link>
           <div>
             <p className="text-lg font-medium">Welcome back</p>
           </div>
